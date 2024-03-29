@@ -1,0 +1,54 @@
+BNF (Backus-Naur Form) FOR VOICE DOCUMENT PROCESSING
+
+<document>		::= <standard-text> | <chapter-directive> | <document> <document>
+
+<standard-text>		::= <whitespace> | <eol> | <character> | <standard-text> <standard-text>
+<whitespace>		::= " " | "" | "\t"
+<eol>			::= "\r" | "\n" | "\r\n"
+<character>		::= <alpha-numeric> | <non-alpha-numeric>
+<alpha-numeric>		::= <alpha> | <numeric>
+<alpha>			::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" | "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z"
+<numeric>		::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+<non-alpha-numeric>	::= "|" | " " | "!" | "#" | "$" | "%" | "&" | "(" | ")" | "*" | "+" | "," | "-" | "." | "/" | ":" | ";" | ">" | "=" | "<" | "?" | "@" | "[" | "\" | "]" | "^" | "_" | "`" | "{" | "}" | "~" | "'" | '"'
+<float>			::= <numeric> | "." | <float><float>
+<integer>		::= <numeric> | <integer><integer>
+
+<chapter-directive>	::= <chapter-header> [<chapter-name>], <directive-list> <eol>
+<chapter-header>	::= "### CHAPTER"
+<chapter-name>		::= <whitespace> | <alpha-numeric> | <alpha-numeric> <chapter-name>
+
+<directive-list>	::= <directive-item> | <directive-item>, <directive-list>
+<directive-item>	::= <directive-delay> | <directive-speed> | <directive-voice> | <directive-filler> | <directive-model>
+
+<directive-delay>	::= "DELAY" <seconds>
+<seconds>		::= <float> | <integer>
+
+<directive-speed>	::= "SPEED" <float>
+
+<directive-voice>	::= "VOICE" <voice>
+<voice>			::= "alloy" | "echo" | "fable" | "onyx" | "nova" | "shimmer"
+
+<directive-filler>	::= "FILLER" <float>
+
+<directive-model>	::= "MODEL" <model>
+<model>			::= "tts-1" | "tts-1-hd" 
+
+
+DIRECTIVE EXAMPLES:
+
+### CHAPTER
+### CHAPTER two, VOICE echo
+### CHAPTER thr33, DELAY 2.1, SPEED 1.0, VOICE shimmer
+### CHAPTER four, SPEED 1.2, VOICE echo, FILLER 0.05, DELAY 10.0, MODEL tts-1
+
+
+DIRECTIVE DEFAULTS:
+
+      DELAY 1.5
+      SPEED 1.0
+      VOICE alloy
+      FILLER 0.0
+      MODEL tts-1
+
+
+

@@ -1,0 +1,226 @@
+### CHAPTER intro, SPEED 1.0, VOICE onyx
+
+Good evening everyone. ... Tonight we have a special guest who will be
+reading an epic poem in Tolkien's Elvish language, Quenya.
+
+Please welcome our spoken word performer, FABLE.
+
+
+### CHAPTER reader intro, SPEED 1.0, VOICE fable, DELAY 2.5, FILLER 0.2
+
+Hello and good evening. My stage name is FABLE.
+
+Tonight that is very appropriate.
+
+The poem I will read for you tonight is entitled "The Unlikely
+Hero". It is similar in form as all those novels following the style
+outlined by Joseph Campbell in his book, "The Hero with a Thousand
+Faces".
+
+As indicated ... it is written in Quenya. This is only one of
+J.R.R. Tolkien's many invented languages. Quenya itself is only one of
+his two well-constructed fantasy ELVISH languages. His other Elvish
+language is called "Sindarin".
+
+Tonight ... I will be reading "The Unlikely Hero" - written by a
+fictional Elf author - in a fictional Elvish language.
+
+I apologize in advance for it being dense, but I hope you can
+appreciate its tone and flow. Afterward I will recite the same poem in
+the King's English. 
+
+Please sit back and enjoy its rhythm as I twist my tongue in knots.
+
+Thank you.
+
+
+### CHAPTER quenya poem, DELAY 3.2, SPEED 1.0, VOICE fable, FILLER 0.0
+
+"I ÚMIELYA HERU: ELENIË I EÄRENDIL"
+
+Mélië ar sírë lómë,
+I úmielya heru,
+Ná care alwë,
+Ar ná culumë anta.
+
+Táreo coa,
+Ná corma firya,
+I carië tirya,
+Ar i lambë úrë.
+
+Ná i oromardi,
+Ná i núrë cendë,
+Ná i firyal,
+Ar ná i herur.
+
+Á anta maruvan,
+I úmielya heru,
+Táreo coa,
+Ar i vinya lúmë.
+
+Aldaron antanë,
+Nér care atan,
+Nárë firë hilya,
+Ná vandë tuluva.
+
+Tulë sí manë,
+I úmielya heru,
+Táreo coa,
+Ar síla vëa.
+
+I quendi tuluva,
+Míra úcarë atan,
+Ná vandë tuluva,
+Ar ná pilinë heru.
+
+Nárë valdë hilya,
+I úmielya heru,
+Táreo coa,
+Ar síla undómë.
+
+Meldo vardë atan,
+Ar menelvar tulya,
+Nárë tirë carë,
+Ar sí manë cala.
+
+Nai melmë síra,
+I úmielya heru,
+Táreo coa,
+Ar síla vinya.
+
+Elenië i Eärendil,
+Ná care alwë,
+Ar ná culumë anta,
+Nárë tirë carë.
+
+Eärendil ambar,
+I úmielya heru,
+Táreo coa,
+Ar síla vinya.
+
+Aldaron antanë,
+Nér care atan,
+Nárë firë hilya,
+Ná vandë tuluva.
+
+Elenië i Eärendil,
+I úmielya heru,
+Táreo coa,
+Ar síla undómë.
+
+Nárë valdë hilya,
+I úmielya heru,
+Táreo coa,
+Ar síla undómë.
+
+Nai melmë síra,
+I úmielya heru,
+Táreo coa,
+Ar síla vinya.
+
+Elenië i Eärendil,
+I úmielya heru,
+Táreo coa,
+Ar síla vinya.
+
+
+### CHAPTER translation, DELAY 3.2, SPEED 1.0, VOICE fable, FILLER 0.03
+
+And now the English translation ...
+
+"THE UNLIKELY HERO: ELENIË OF EÄRENDIL"
+
+In the twilight of evening,
+The unlikely hero,
+He does not seek glory,
+And he does not crave fame.
+
+He walks alone,
+Without a shining sword,
+The heart of a wanderer,
+And the soul of a dreamer.
+
+He is not of noble birth,
+Nor of royal blood,
+Nor of heroic lineage,
+And nor of great strength.
+
+But in his heart burns,
+The unlikely hero,
+He walks alone,
+And the wind whispers his name.
+
+The trees sing,
+Men heed his call,
+The fire of his spirit,
+Does not fade away.
+
+Under starlit sky,
+The unlikely hero,
+He walks alone,
+And the world awakens.
+
+The elves listen,
+To the words of men,
+They heed his call,
+And do not forget the hero.
+
+The fire of his spirit,
+The unlikely hero,
+He walks alone,
+And the world is changed.
+
+The heavens bow to him,
+And the stars shine bright,
+The fire still burns,
+And under this sky he stands.
+
+For his love is true,
+The unlikely hero,
+He walks alone,
+And the world rejoices.
+
+Elenië of Eärendil,
+He does not seek glory,
+And he does not crave fame,
+Yet the world remembers.
+
+Eärendil's star,
+The unlikely hero,
+He walks alone,
+And the world rejoices.
+
+The trees sing,
+Men heed his call,
+The fire of his spirit,
+Does not fade away.
+
+Elenië of Eärendil,
+The unlikely hero,
+He walks alone,
+And the world is changed.
+
+The fire of his spirit,
+The unlikely hero,
+He walks alone,
+And the world is changed.
+
+For his love is true,
+The unlikely hero,
+He walks alone,
+And the world rejoices.
+
+Elenië of Eärendil,
+The unlikely hero,
+He walks alone,
+And the world rejoices.
+
+
+
+### CHAPTER close, DELAY 2.8, SPEED 1.0, VOICE fable
+
+Thank you for your time tonight.
+
+### CHAPTER close-2, SPEED 1.0, VOICE onyx
+
+Alright. As always, THANK YOU FABLE.

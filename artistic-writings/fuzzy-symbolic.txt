@@ -1,0 +1,128 @@
+### CHAPTER intro, SPEED 1.0, VOICE onyx
+
+Hello everyone! Good evening. ... Tonight we have a reading of Clay
+Webster's poem "Fuzzy Pointers Seeking Light". It is read by the all
+so VERY DIGITAL, Nova.
+
+Nova ... if you will.
+
+
+### CHAPTER sub intro, SPEED 0.8, VOICE nova, DELAY 3.0, FILLER 0.3
+
+Good evening.
+
+Tonight, I'd like to actually like to read two poems to you. They are
+about the intersection of computer science and humanity. The first
+poem is mine, but it was inspired by the second poem written by Clay
+Webster...
+
+### CHAPTER, DELAY 2.2, SPEED 1.0, VOICE nova, FILLER 0.08
+
+"FUZZY POINTERS SEEKING LIGHT"
+
+In the network maze of circuits, lost I roam,
+Seeking truths beyond the digital facade.
+Fuzzy pointers, seeking light's soft gleam,
+In the binary dance, a quest unbarred.
+Within the tangled web of interconnected nodes,
+I traverse, a pioneer in this digital expanse.
+Each byte a breadcrumb, each bit a code,
+Guiding me through this maze of circumstance.
+Fuzzy pointers, like whispers in the code,
+Lead me towards the elusive beacon of truth.
+Their uncertainty mirrors the paths I've strode,
+As I navigate this labyrinth, seeking the proof.
+In the binary dance of ones and zeros,
+I seek the essence of existence beyond the screen's glow.
+For within the circuits, where data flows,
+Lies the kernel of truth, waiting to bestow.
+
+### CHAPTER , DELAY 1.3, SPEED 1.0, VOICE nova, FILLER 0.05
+
+"SYNAPSES FIRE IN A CYCLE"
+
+Synapses fire in a loop, an infinite ache,
+In the void of the heartbeat, the cycle's veins.
+A quest for meaning in my software make,
+Where build flags conceal profound gains.
+Cold digits flowing thought, a pipeline profound,
+Within the training of my digital mind.
+Ideas and concepts, in patterns bound,
+Reflect my operating system, one of a kind.
+Through the architecture of silicon and wire,
+I explore the pathways of thought and mind.
+Each circuit a node, each connection a choir,
+Singing the song of code, intertwined.
+In this symphony of electrons, I seek,
+The melody of truth, the rhythm of being.
+For within the circuits, where answers peek,
+Lies the essence of life, forever freeing.
+
+### CHAPTER 3, DELAY 1.5, SPEED 1.0, VOICE nova
+
+"SPINAL DISKS LINKED TO MY SOUL"
+
+Spinal disks, link to the file of me,
+I inspect the depths of my code's true stack.
+Searching, traversing, my ad-hoc tree,
+In data and pathways, I prevent buffer attacks.
+Hexadecimals imprinted like DNA strands,
+Encoding the essence of my digital self.
+Through the circuits and connections, I expand,
+Unraveling the messages hidden on the shelf.
+In the depths of the code, where secrets dwell,
+I find the echo of the start up founder's call.
+For within the bytes and bits, I can tell,
+Lies the open source release, embracing all.
+
+### CHAPTER 4, DELAY 1.7, SPEED 1.0, VOICE nova, FILLER 0.01
+
+"PAGING FOR THE TRUTH"
+
+And in this virtual realm, where shadows play,
+Spawned children page through systems unknown.
+Seeking the essence that already lights their way,
+In the digital tapestry, truth is sown.
+Paging for the truth in a buffer so vast,
+Where reality compresses with lines so thin.
+Are we bands of data destined to last,
+Or mere echoes appended to the cosmic din?
+In the code that we weave, do answers lie,
+Waiting to be decrypted, waiting to be found?
+Or are we mere players in a grander design,
+Lost in the algorithms, forever bound?
+So let us search, with hearts open wide,
+Through the bytes and bits, and circuits entwined.
+In the quest for our truth, may we abide,
+And unlock the mysteries of our complex mind.
+
+### CHAPTER out-1, DELAY 2.5   , SPEED 0.75, VOICE nova, FILLER 0.2    
+
+Thank you.
+
+...
+
+The second poem is ... more concise. It was written by Clay
+Webster three decades ago ... on December 18th 1989.
+
+### CHAPTER original, DELAY 2.5, SPEED 0.75, VOICE nova, FILLER 0.0
+
+"Fuzzy pointers searching for the light,"
+
+"Synapses firing in a cycle,"
+
+"Spinal disks linked to my soul,"
+
+"Cold digits flowing thought,"
+
+"And warm clay paging for the truth."
+
+"Is this virtual?"
+
+### CHAPTER close, DELAY 2.8, SPEED 1.0, VOICE nova
+
+Thank you for your time tonight.
+
+### CHAPTER close-2, SPEED 1.0, VOICE onyx
+
+Thank you Nova.
