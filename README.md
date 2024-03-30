@@ -13,7 +13,9 @@ problems I decided to solve for:
 
 * IMHO the pacing is fast. There is no reliable way to introduce
   pauses or breaks. Ellipses, punctuation, and line breaks can have a
-  useful effect. Sometimes. "[Pause]" can sometimes work.
+  useful effect. Sometimes. "[Pause]" can sometimes work. There needed
+  to be a way to let the listener catch their breath because the TTS
+  speaker was never going to take a break.
 
 * The token limits which limit how much can be thrown at the model at
   one time can get in the way pretty easily. So you will need to chunk
@@ -28,7 +30,9 @@ problems I decided to solve for:
 * I found myself adding occassional "filler words" like "uh" to
   enforce and accentuate the pauses. Then I realized it's just more
   natual to have filler words in different portions of a document for
-  its pacing and feel.
+  its pacing and feel. Then I realized it's terrible to litter the
+  document with filler words when it really is based on someone
+  reading the document and it should not be in the doc itself.
 
 I created a Simple OpenAI TTS Markup Language to address the above
 points. The BNF for it is in `simple-openai-tts-markup-language.bnf`.
@@ -132,6 +136,36 @@ in, I was thinking that they would be useful in larger fills. I do
 need to try them out and either cut them entirely or see where I can
 use them.
 
+
+## Directive Use
+
+Have a standard text document. Add in additional lines on their own at
+each beginning of a chapter or change in speech, or break in speech. The format is generally:
+
+`### CHAPTER optional text string here, SPEED 1.0, VOICE fable, DELAY 2.5, FILLER 0.2, MODEL tts-1`
+
+Where:
+
+`SPEED` is slow to fast and between 0.25 and 4.0. The default and
+recommended value is 1.0 because other levels can introduce some
+distortion.
+
+`VOICE` is "alloy", "echo", "fable", "onyx", "nova", or "shimmer"
+
+`MODEL` is "tts-1", "tts-1-hd". The default is "tts-1" and cheap. You
+also don't want to flip between the two.
+
+`DELAY` is the number of seconds to pause before starting this new
+segment. It can be from 0 to 3600.
+
+`FILLER` is the percentile chance 0 to 1 where 0.2 is a 20% chance to
+add a filler word at a sentence break or ellipse.
+
+All of the segments are optional however if one is not specified then
+the default value will be used. For this reason you should always
+supply a VOICE.
+
+Or for a gross amount of detail you can read https://github.com/Thoughtrights/eloquent-spoken-word/blob/main/simple-openai-tts-markup-language.bnf
 
 
 
