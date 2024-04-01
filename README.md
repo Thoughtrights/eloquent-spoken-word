@@ -38,24 +38,35 @@ I created a Simple OpenAI TTS Markup Language to address the above
 points. The BNF for it is in `simple-openai-tts-markup-language.bnf`.
 
 
-## Caveats
+## Directive Use
 
-* I did consider leveraging subtitling and captioning formats. But
-  they were a bigger project than I was looking for. And they're more
-  about where to shove text instead what to do with it. That said,
-  they could be an interesting data source and have applicability for
-  Accessibility.
+Have a standard text document. Add in additional lines on their own at
+each beginning of a chapter or change in speech, or break in speech. The format is generally:
 
-* OpenAI's TTS and model is tailored to English.
+`### CHAPTER optional text string here, SPEED 1.0, VOICE fable, DELAY 2.5, FILLER 0.2, MODEL tts-1`
 
-* I need to tweak my filler-word fill logic to skip some fill opportunities.
+Where:
 
-* I also did consider the Speech Synthesis Markup Language (SSML), but
-  that is way more heavyweight than I was looking for. And honestly,
-  XML is not where I want to be. There are plenty of neat things in
-  there (like BREAK, PROSODY, and EMPHASIS). It might be worth going
-  back and implementing some of them.
-  https://www.w3.org/TR/speech-synthesis11/
+`SPEED` is slow to fast and between 0.25 and 4.0. The default and
+recommended value is 1.0 because other levels can introduce some
+distortion.
+
+`VOICE` is "alloy", "echo", "fable", "onyx", "nova", or "shimmer"
+
+`MODEL` is "tts-1", "tts-1-hd". The default is "tts-1" and cheap. You
+also don't want to flip between the two.
+
+`DELAY` is the number of seconds to pause before starting this new
+segment. It can be from 0 to 3600.
+
+`FILLER` is the percentile chance 0 to 1 where 0.2 is a 20% chance to
+add a filler word at a sentence break or ellipse.
+
+All of the segments are optional however if one is not specified then
+the default value will be used. For this reason you should always
+supply a VOICE.
+
+Or for a gross amount of detail you can read https://github.com/Thoughtrights/eloquent-spoken-word/blob/main/simple-openai-tts-markup-language.bnf
 
 
 ## Future Work
@@ -137,35 +148,25 @@ need to try them out and either cut them entirely or see where I can
 use them.
 
 
-## Directive Use
+## Caveats
 
-Have a standard text document. Add in additional lines on their own at
-each beginning of a chapter or change in speech, or break in speech. The format is generally:
+* I did consider leveraging subtitling and captioning formats. But
+  they were a bigger project than I was looking for. And they're more
+  about where to shove text instead what to do with it. That said,
+  they could be an interesting data source and have applicability for
+  Accessibility.
 
-`### CHAPTER optional text string here, SPEED 1.0, VOICE fable, DELAY 2.5, FILLER 0.2, MODEL tts-1`
+* OpenAI's TTS and model is tailored to English.
 
-Where:
+* I need to tweak my filler-word fill logic to skip some fill opportunities.
 
-`SPEED` is slow to fast and between 0.25 and 4.0. The default and
-recommended value is 1.0 because other levels can introduce some
-distortion.
+* I also did consider the Speech Synthesis Markup Language (SSML), but
+  that is way more heavyweight than I was looking for. And honestly,
+  XML is not where I want to be. There are plenty of neat things in
+  there (like BREAK, PROSODY, and EMPHASIS). It might be worth going
+  back and implementing some of them.
+  https://www.w3.org/TR/speech-synthesis11/
 
-`VOICE` is "alloy", "echo", "fable", "onyx", "nova", or "shimmer"
-
-`MODEL` is "tts-1", "tts-1-hd". The default is "tts-1" and cheap. You
-also don't want to flip between the two.
-
-`DELAY` is the number of seconds to pause before starting this new
-segment. It can be from 0 to 3600.
-
-`FILLER` is the percentile chance 0 to 1 where 0.2 is a 20% chance to
-add a filler word at a sentence break or ellipse.
-
-All of the segments are optional however if one is not specified then
-the default value will be used. For this reason you should always
-supply a VOICE.
-
-Or for a gross amount of detail you can read https://github.com/Thoughtrights/eloquent-spoken-word/blob/main/simple-openai-tts-markup-language.bnf
 
 
 
