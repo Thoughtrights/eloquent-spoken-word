@@ -1,0 +1,17 @@
+### CHAPTER test, SPEED 1.0, VOICE shimmer, FILLER 0.2
+
+When in the Course of human events, it becomes necessary for one
+people to dissolve the political bands which have connected them with
+another, and to assume among the powers of the earth, the separate and
+equal station to which the Laws of Nature and of Nature's God entitle
+them, a decent respect to the opinions of mankind requires that they
+should declare the causes which impel them to the separation.
+
+### CHAPTER test, SPEED 1.0, VOICE fable, DELAY 2.5
+
+Conscious of its spiritual and moral heritage, the Union is founded on
+the indivisible, universal values of human dignity, freedom, equality
+and solidarity; it is based on the principles of democracy and the
+rule of law. It places the individual at the heart of its activities,
+by establishing the citizenship of the Union and by creating an area
+of freedom, security and justice.

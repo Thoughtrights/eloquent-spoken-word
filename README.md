@@ -78,14 +78,17 @@ there for 40 years. Most just have some base augmentation. I have used
 MacOS's `say` in scripts for a long while. It's great for what it is.
 
 I do mean to try AWS's Amazon Polly.
+https://aws.amazon.com/polly/
 
 I do mean to try IBM Watson's TTS.
+https://www.ibm.com/demos/live/tts-demo/self-service/home
 
 
 ### Use a Logging System
 
-I have various print statements grouped. I might want to change these
-to logging and log levels. Maybe.
+I have various print statements grouped with some notion of
+verbosity. I might want to change these to logging and log
+levels. Maybe.
 
 
 ### Negative Values for the DELAY directive.
@@ -134,13 +137,6 @@ pre-pre-processing) to support a negative value for DELAY *and*
 LEFT/RIGHT direction.
 
 
-### Command Line
-
-Add command line options. Support file input and file output
-names. Support STDIN && STDOUT. Support default overrides for all the
-options. Support changes to the filler word list.
-
-
 ### Filler Words
 
 I have a `fillerWordsShort` and `fillerWordsLong` but I'm not using
@@ -148,6 +144,8 @@ I have a `fillerWordsShort` and `fillerWordsLong` but I'm not using
 in, I was thinking that they would be useful in larger fills. I do
 need to try them out and either cut them entirely or see where I can
 use them.
+
+There are some corner cases where filler words should not be used. Um.
 
 
 ## Caveats
@@ -166,8 +164,12 @@ use them.
   that is way more heavyweight than I was looking for. And honestly,
   XML is not where I want to be. There are plenty of neat things in
   there (like BREAK, PROSODY, and EMPHASIS). It might be worth going
-  back and implementing some of them.
+  back and implementing some of them. I should also look at how AWS
+  Polly handles them.
+
   https://www.w3.org/TR/speech-synthesis11/
+  https://us-east-1.console.aws.amazon.com/polly/home/SynthesizeSpeech?region=us-east-1
+  https://docs.aws.amazon.com/polly/latest/dg/ssml.html
 
 
 
