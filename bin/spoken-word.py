@@ -6,6 +6,7 @@
 
 import os
 import sys
+import getopt
 from pathlib import Path
 from os.path import exists
 from openai import OpenAI
@@ -15,7 +16,7 @@ import random
 
 random.seed()
 
-client = OpenAI(api_key=os.environ.get("OPENAI_DUNGEONEER_API_KEY"))
+client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 fullAudioFile = AudioSegment.silent(duration=0)
 
 fillerWordsShort = ["uh", "um", "so"]
@@ -39,243 +40,23 @@ defaultSettings = {
     "MODEL": "tts-1"
 }
 
+helpText = "\n" + sys.argv[0] + """ Usage Options:
+\t --input=<filename> | --stdin
+\t --output=<filename>
+\t[--voice={alloy,echo,fable,onyx,nova,shimmer}] [--speed=<multiplier>]
+\t[--model={tts-1,tts-1-hd}] [--delay=<real-seconds>] [--filler=<real-percent>]
+\t[--verbose]
+\t[--help]
 
-
-document = '''
-### CHAPTER intro, SPEED 1.0, VOICE onyx
-
-Good evening everyone. ... Tonight we have a special guest who will be
-reading an epic poem in Tolkien's Elvish language, Quenya.
-
-Please welcome our spoken word performer, FABLE.
-
-
-### CHAPTER reader intro, SPEED 1.0, VOICE fable, DELAY 2.5, FILLER 0.2
-
-Hello and good evening. My stage name is FABLE.
-
-Tonight that is very appropriate.
-
-The poem I will read for you tonight is entitled "The Unlikely
-Hero". It is similar in form as all those novels following the style
-outlined by Joseph Campbell in his book, "The Hero with a Thousand
-Faces".
-
-As indicated ... it is written in Quenya. This is only one of
-J.R.R. Tolkien's many invented languages. Quenya itself is only one of
-his two well-constructed fantasy ELVISH languages. His other Elvish
-language is called "Sindarin".
-
-Tonight ... I will be reading "The Unlikely Hero" - written by a
-fictional Elf author - in a fictional Elvish language.
-
-I apologize in advance for it being dense, but I hope you can
-appreciate its tone and flow. Afterward I will recite the same poem in
-the King's English. 
-
-Please sit back and enjoy its rhythm as I twist my tongue in knots.
-
-Thank you.
-
-
-### CHAPTER quenya poem, DELAY 3.2, SPEED 1.0, VOICE fable, FILLER 0.0
-
-"I ÚMIELYA HERU: ELENIË I EÄRENDIL"
-
-Mélië ar sírë lómë,
-I úmielya heru,
-Ná care alwë,
-Ar ná culumë anta.
-
-Táreo coa,
-Ná corma firya,
-I carië tirya,
-Ar i lambë úrë.
-
-Ná i oromardi,
-Ná i núrë cendë,
-Ná i firyal,
-Ar ná i herur.
-
-Á anta maruvan,
-I úmielya heru,
-Táreo coa,
-Ar i vinya lúmë.
-
-Aldaron antanë,
-Nér care atan,
-Nárë firë hilya,
-Ná vandë tuluva.
-
-Tulë sí manë,
-I úmielya heru,
-Táreo coa,
-Ar síla vëa.
-
-I quendi tuluva,
-Míra úcarë atan,
-Ná vandë tuluva,
-Ar ná pilinë heru.
-
-Nárë valdë hilya,
-I úmielya heru,
-Táreo coa,
-Ar síla undómë.
-
-Meldo vardë atan,
-Ar menelvar tulya,
-Nárë tirë carë,
-Ar sí manë cala.
-
-Nai melmë síra,
-I úmielya heru,
-Táreo coa,
-Ar síla vinya.
-
-Elenië i Eärendil,
-Ná care alwë,
-Ar ná culumë anta,
-Nárë tirë carë.
-
-Eärendil ambar,
-I úmielya heru,
-Táreo coa,
-Ar síla vinya.
-
-Aldaron antanë,
-Nér care atan,
-Nárë firë hilya,
-Ná vandë tuluva.
-
-Elenië i Eärendil,
-I úmielya heru,
-Táreo coa,
-Ar síla undómë.
-
-Nárë valdë hilya,
-I úmielya heru,
-Táreo coa,
-Ar síla undómë.
-
-Nai melmë síra,
-I úmielya heru,
-Táreo coa,
-Ar síla vinya.
-
-Elenië i Eärendil,
-I úmielya heru,
-Táreo coa,
-Ar síla vinya.
-
-
-### CHAPTER translation, DELAY 3.2, SPEED 1.0, VOICE fable, FILLER 0.03
-
-And now the English translation ...
-
-"THE UNLIKELY HERO: ELENIË OF EÄRENDIL"
-
-In the twilight of evening,
-The unlikely hero,
-He does not seek glory,
-And he does not crave fame.
-
-He walks alone,
-Without a shining sword,
-The heart of a wanderer,
-And the soul of a dreamer.
-
-He is not of noble birth,
-Nor of royal blood,
-Nor of heroic lineage,
-And nor of great strength.
-
-But in his heart burns,
-The unlikely hero,
-He walks alone,
-And the wind whispers his name.
-
-The trees sing,
-Men heed his call,
-The fire of his spirit,
-Does not fade away.
-
-Under starlit sky,
-The unlikely hero,
-He walks alone,
-And the world awakens.
-
-The elves listen,
-To the words of men,
-They heed his call,
-And do not forget the hero.
-
-The fire of his spirit,
-The unlikely hero,
-He walks alone,
-And the world is changed.
-
-The heavens bow to him,
-And the stars shine bright,
-The fire still burns,
-And under this sky he stands.
-
-For his love is true,
-The unlikely hero,
-He walks alone,
-And the world rejoices.
-
-Elenië of Eärendil,
-He does not seek glory,
-And he does not crave fame,
-Yet the world remembers.
-
-Eärendil's star,
-The unlikely hero,
-He walks alone,
-And the world rejoices.
-
-The trees sing,
-Men heed his call,
-The fire of his spirit,
-Does not fade away.
-
-Elenië of Eärendil,
-The unlikely hero,
-He walks alone,
-And the world is changed.
-
-The fire of his spirit,
-The unlikely hero,
-He walks alone,
-And the world is changed.
-
-For his love is true,
-The unlikely hero,
-He walks alone,
-And the world rejoices.
-
-Elenië of Eärendil,
-The unlikely hero,
-He walks alone,
-And the world rejoices.
-
-
-
-### CHAPTER close, DELAY 2.8, SPEED 1.0, VOICE fable
-
-Thank you for your time tonight.
-
-### CHAPTER close-2, SPEED 1.0, VOICE onyx
-
-Alright. As always, THANK YOU FABLE.
-'''
+"""
 
 def verboseOutput (msg):
-    print(msg) # add in logging system and log levels?
+    if (verbose):
+        print(msg)
     sys.stdout.flush()
 
 def errorOutput (msg):
-    print(msg) # add in logging system and log levels?
+    print(msg)
     sys.stdout.flush()
 
     
@@ -285,8 +66,7 @@ def createSegment (client, settings=defaultSettings, dialog=''):
 
     verboseOutput(f"Working on chapter \"{settings['CHAPTER']}\".")
     verboseOutput(f"Adding {settings['DELAY']} seconds of silence.")
-    audioSegment = AudioSegment.silent(duration= (settings['DELAY'] * 1000)) # DELAY is in secs. duration takes msecs
-
+    audioSegment = AudioSegment.silent(duration= (settings['DELAY'] * 1000)) # DELAY is secs
     verboseOutput(f"Requesting audio file from OpenAI for dialog.")
     response = client.audio.speech.create(
         model = settings['MODEL'],
@@ -308,6 +88,91 @@ def createSegment (client, settings=defaultSettings, dialog=''):
 
 
 
+verbose = False
+stdin = False
+inputFile = ''
+outputFile = ''
+try:
+    opts, args = getopt.getopt(
+        sys.argv[1:],
+        "iovh",
+        ["input=", "output=", "verbose", "stdin", "voice=", "speed=", "model=", "delay=", "filler=", "help"]
+    )
+except getopt.GetoptError:
+    print(help_text)
+    sys.exit(2)
+    
+for opt, arg in opts:
+    if opt in ("-h", "--help"):
+        print(helpText)
+        sys.exit()
+    elif opt in ("-i", "--input"):
+        inputFile = arg
+    elif opt in ("-o", "--output"):
+        outputFile = arg
+    elif opt in ("-v", "--verbose"):
+        verbose = True
+    elif opt in ("--stdin"):
+        stdin = True
+    elif opt in ("--voice"):
+        if (arg in allowedVoices):
+            defaultSettings['VOICE'] = arg
+        else:
+            errorOutput(f"Error: Unknown voice, {arg}.") 
+            print(helpText)
+            sys.exit
+    elif opt in ("--speed"):
+        if (float(arg) >= minSpeed and float(arg) <= maxSpeed):
+            defaultSettings['SPEED'] = float(arg)
+        else:
+            errorOutput(f"Error: Bad speed value, {arg}.") 
+            print(helpText)
+            sys.exit
+    elif opt in ("--delay"):
+        if (float(arg) >= minDelay and float(arg) <= maxDelay):
+            defaultSettings['DELAY'] = float(arg)
+        else:
+            errorOutput(f"Error: Bad delay value, {arg}.") 
+            print(helpText)
+            sys.exit
+    elif opt in ("--filler"):
+        if (float(arg) >= minFiller and float(arg) <= maxFiller):
+            defaultSettings['FILLER'] = float(arg)
+        else:
+            errorOutput(f"Error: Bad filler value, {arg}.") 
+            print(helpText)
+            sys.exit
+    elif opt in ("--model"):
+        if (arg in allowedModels):
+            defaultSettings['MODEL'] = arg
+        else:
+            errorOutput(f"Error: Unknown model, {arg}.") 
+            print(helpText)
+            sys.exit
+
+verboseOutput('Verbosity mode on.')
+if (stdin and inputFile != ''):
+    errorOutput(f"Error: both a specified input file and stdin were specified.") 
+    print(helpText)
+    sys.exit
+if (stdin is False and inputFile == ''):
+    errorOutput(f"Error: no file input or stdin specified.") 
+    print(helpText)
+    sys.exit
+if (outputFile == ''):
+    errorOutput(f"Error: no specified output file.") 
+    print(helpText)
+    sys.exit
+
+# GET INPUT
+document = ''
+if (stdin):
+    for line in sys.stdin:
+        document += line
+else:
+    fileHandle = open(inputFile, "r")
+    for line in fileHandle:
+        document += line
 
 
 currentSettings = defaultSettings
@@ -364,6 +229,7 @@ for line in document.splitlines():
                 else:
                     errorOutput(f"error: Unknown voice, {chapterVoice}.") 
             elif directive.startswith('FILLER'):
+                verboseOutput(f"THE DIRECTIVE is {directive}.") 
                 chapterFiller = float(re.search(r"\s([0-9\.]+)$", directive).group(1))
                 if (chapterFiller >= minFiller and chapterFiller <= maxFiller):
                     currentSettings['FILLER'] = chapterFiller
@@ -436,6 +302,5 @@ for line in document.splitlines():
 currentText += "\n\n...\n"
 fullAudioFile += createSegment(client, currentSettings, currentText)
 
-
-fullAudioFile.export("spoken-word-output.mp3", format="mp3")
+fullAudioFile.export(outputFile, format="mp3")
 

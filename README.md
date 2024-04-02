@@ -79,6 +79,8 @@ MacOS's `say` in scripts for a long while. It's great for what it is.
 
 I do mean to try AWS's Amazon Polly.
 
+I do mean to try IBM Watson's TTS.
+
 
 ### Use a Logging System
 
