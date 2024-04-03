@@ -7,14 +7,22 @@
 import os
 import sys
 import getopt
-from pathlib import Path
-from os.path import exists
 from openai import OpenAI
 from pydub import AudioSegment
 import re
 import random
 
 random.seed()
+
+helpText = "\n" + sys.argv[0] + """ usage options:
+\t --input=<filename> | --stdin
+\t --output=<filename>
+\t[--voice={alloy,echo,fable,onyx,nova,shimmer}] [--speed=<multiplier>]
+\t[--model={tts-1,tts-1-hd}] [--delay=<real-seconds>] [--filler=<real-percent>]
+\t[--verbose]
+\t[--help]
+
+"""
 
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 fullAudioFile = AudioSegment.silent(duration=0)
@@ -39,16 +47,6 @@ defaultSettings = {
     "FILLER": 0,
     "MODEL": "tts-1"
 }
-
-helpText = "\n" + sys.argv[0] + """ Usage Options:
-\t --input=<filename> | --stdin
-\t --output=<filename>
-\t[--voice={alloy,echo,fable,onyx,nova,shimmer}] [--speed=<multiplier>]
-\t[--model={tts-1,tts-1-hd}] [--delay=<real-seconds>] [--filler=<real-percent>]
-\t[--verbose]
-\t[--help]
-
-"""
 
 def verboseOutput (msg):
     if (verbose):
