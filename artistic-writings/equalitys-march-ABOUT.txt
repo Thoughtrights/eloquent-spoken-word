@@ -1,0 +1,27 @@
+TECHNICAL: 
+---------
+
+All chapter sections are listed as "### CHAPTER, SPEED 1.0, VOICE
+onyx, DELAY 1.5, FILLER 0.0, MODEL tts-1".
+
+
+CONTENT:
+-------
+
+This was a private poem I put together on on Dr Martin Luther King
+Jr's Day, Jan 16 2023. I derived it through abstracting words and
+emotion from his "I Have a Dream" speech. Those words were then
+modernized and brought into the Black Lives Matter movement, mass
+protests, and focus. I wrote it to work through feelings.
+
+I am a 50-something white guy. I grew up in semi-urban New Brunswick
+NJ. My elementary school was mostly African-American. There were four
+white kids - one was my younger brother. I learned a great deal about
+slavery. And MLK.
+
+I only wrote this TTS processing system 15 months later. I was looking
+for content and saw this journal file. I had never shared it. I did
+not write it to speak it. It was an exercise; My imagination of a
+speaker at a BLM march.
+
+

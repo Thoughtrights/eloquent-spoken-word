@@ -1,0 +1,13 @@
+CONTENT
+-------
+
+The original short poem was written by me on December 18th 1989. It
+uses almost exclusively double and triple meanings spanning life,
+biology, computer hardware, and operating systems.
+
+I re-imagined this as a much larger poem and used OpenAI's GPT LLM to
+assist. It provided a good draft I'd give a "C" grade to. I re-wrote
+much of it. I should improve it by shortening it to half its
+size. However, I do find its length useful for the purposes of this
+TTS demo.
+

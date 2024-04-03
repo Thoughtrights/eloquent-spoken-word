@@ -1,0 +1,27 @@
+TECHNICAL
+---------
+
+You will note that all the CHAPTER directives are the same. This is
+because this text document predates the spoken-word directive
+processing. I had a separate python script specifically for this
+spoken word performance.
+
+In it I realized the importance of having chapters and change-able
+pauses, filler word use, speeds, etc. This content made it
+crystal-clear eloquent-spoken-word was useful.
+
+CONTENT
+-------
+
+The only thing the original had were chapters. Each chapter was an
+entry in an array structure. Each had the same padding pause between
+the chapter. I have left all the content attempts at introducing
+pauses and filler words to show how time consuming and messy it was.
+
+The content itself ranges across a spectrum of third-rail topics from
+religon, cosmology, our souls, cybernetics, the multiverse, and the
+simulation hypothesis.
+
+I wrote it at the end of a 14 hour work day sometime in 2018 or
+2019. I'm happy to hide behind an AI TTS model voice reading it. It of
+course only accentuates the nature of the content.
